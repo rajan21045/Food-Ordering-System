@@ -32,4 +32,4 @@ interface—perfect for learning and prototyping.
     - Open index.html in your browser
     - Or, optionally, use a local server:
    'Using Python 3
-      python3 -m http.server 5500
+      python3 -m http.server 5500'
