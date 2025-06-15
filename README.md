@@ -18,8 +18,6 @@ interface—perfect for learning and prototyping.
 
 - Fully responsive layout across devices  
 - Visually appealing menu with item cards  
-- Add-to-cart button (example JS behavior could be stubbed or simulated)  
-- Cart summary page showing selected items and total cost  
 - Smooth navigation with Bootstrap's responsive navbar
 
 ---
@@ -29,4 +27,4 @@ interface—perfect for learning and prototyping.
 1. **Clone the repository**  
    ```bash
    git clone https://github.com/rajan21045/Food-Ordering-System.git
-   cd Food-Ordering-System
+   cd Food-Ordering-System```
