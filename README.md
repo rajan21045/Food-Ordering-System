@@ -29,7 +29,7 @@ interface—perfect for learning and prototyping.
    git clone https://github.com/rajan21045/Food-Ordering-System.git
    cd Food-Ordering-System 
 2.	***Launch locally***
-    -Open index.html in your browser
-    -Or, optionally, use a local server:
-   Using Python 3
+    - Open index.html in your browser
+    - Or, optionally, use a local server:
+   'Using Python 3
       python3 -m http.server 5500
