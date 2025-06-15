@@ -5,4 +5,28 @@ interface—perfect for learning and prototyping.
 
 ---
 
-## 📂 Project Structure
+## 🧰 Technologies & Libraries
+
+- **HTML5** – Semantic markup for structure  
+- **CSS3** – Custom styles and responsive design  
+- **Bootstrap 5** – Grid, components, navbar, and form styling  
+- **Optional:** JavaScript (`scripts.js`) for interactive features like adding to cart
+
+---
+
+## 🎯 Key Features
+
+- Fully responsive layout across devices  
+- Visually appealing menu with item cards  
+- Add-to-cart button (example JS behavior could be stubbed or simulated)  
+- Cart summary page showing selected items and total cost  
+- Smooth navigation with Bootstrap's responsive navbar
+
+---
+
+## 🧑‍💻 How to Run Locally
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/rajan21045/Food-Ordering-System.git
+   cd Food-Ordering-System
