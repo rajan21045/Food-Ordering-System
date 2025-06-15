@@ -28,3 +28,13 @@ interface—perfect for learning and prototyping.
 - Add login/signup and order tracking system
 - Improve UI with animations and transitions
 - Make it deploy-ready with form validation and storage
+
+---
+
+## 🤝 Contributing
+
+Contributions and feedback are welcome!
+	1.	Fork the repository
+	2.	Create a new branch (feature/your-feature)
+	3.	Commit your changes
+	4.	Open a pull request
