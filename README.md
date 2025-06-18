@@ -23,11 +23,11 @@ interface—perfect for learning and prototyping.
 
 ## 📌 Future Improvements
 	
-- Add real-time cart functionality with JavaScript
-- Integrate a backend (e.g., Firebase, PHP, or Node.js)
-- Add login/signup and order tracking system
-- Improve UI with animations and transitions
-- Make it deploy-ready with form validation and storage
+- Add real-time cart functionality with JavaScript.
+- Integrate a backend (e.g., Firebase, PHP, or Node.js).
+- Add login/signup and order tracking system.
+- Improve UI with animations and transitions.
+- Make it deploy-ready with form validation and storage.
 
 ---
 
