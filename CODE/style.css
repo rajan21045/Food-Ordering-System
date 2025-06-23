@@ -1,63 +1,80 @@
+/* ================== GLOBAL FONT ================== */
 * {
     font-family: "Winky Sans", sans-serif;
 }
 
+/* ================== NAVBAR STYLES ================== */
+
+/* Centered navbar container with max width */
 .navbar {
-    height: 100px;
-    width: 98%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-
-
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.navbar .logo img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    margin-left: 20px;
+/* Flexbox layout for logo alignment */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px; /* space between logo and text */
 }
 
-.headd .navbar .logo b{
-position: absolute;
-left: 140px;
-font-size: 20px    ;
-top: 45px;
-
+/* Logo image sizing */
+.logo img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
 }
 
-.headd button{
-    background-color: #000000;
-    color: orange;
-    border: none;
-    width: 55px;
-    height: 30px;
-    border-radius: 10%;
+/* Logo text style */
+.logo span {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #333;
+  user-select: none;
 }
-/* navbar end here */
 
+/* Login button style */
+.btn-login {
+  background: transparent;
+  border: 1.5px solid #6a5acc;
+  color: #6a5acc;
+  padding: 8px 22px;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Winky Sans', cursive, sans-serif;
+}
 
-/* searching rest. */
+/* Login button hover effect */
+.btn-login:hover {
+  background-color: #6a5acc;
+  color: white;
+  border-color: #6a5acc;
+}
+
+/* ================== SEARCH SECTION ================== */
+
+/* Full-width search banner image */
 .picsearch img {
     width: 100%;
     height: 900px;
-
 }
 
+/* Centered text input and button */
 .text {
     display: flex;
     align-items: center;
     width: 400px;
     margin: 50px auto;
-    padding: 0;
     position: absolute;
     top: 50%;
     left: 40%;
 }
 
-
+/* Style for input field */
 .text input {
     flex: 1;
     padding: 10px;
@@ -68,13 +85,13 @@ top: 45px;
     transition: 0.3s;
 }
 
-
+/* Focus effect on input */
 .text input:focus {
     border-color: #ff7b00;
     box-shadow: 0 0 5px rgba(255, 123, 0, 0.5);
 }
 
-
+/* Button next to search input */
 .text button {
     background-color: #ff7b00;
     color: white;
@@ -86,61 +103,68 @@ top: 45px;
     transition: 0.3s;
 }
 
+/* Button hover effect */
 .text button:hover {
     background-color: #e66a00;
 }
 
-/* ending search rest. */
+/* Centered tagline text */
+.picsearch .pp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);    
+}
 
-/* urbanpulse fresh section start */
+/* ================== URBANPULSE FRESH ================== */
+
 .fresh img {
     width: 60%;
     height: 20%;
 }
 
-
+/* Centering the image inside choices */
 .fresh .choices {
     display: flex;
     justify-content: center;
 }
 
+/* Title for UrbanPulse Fresh */
 .fresh h4 {
     padding-left: 20%;
     font-size: 40px;
 }
 
-/* urbanpulse fresh section end */
+/* ================== FEATURED RESTAURANTS ================== */
 
-/* restru. food start */
+/* Grid layout for restaurant cards */
 .hero {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
     grid-auto-rows: auto !important;
     gap: 5px !important;
     justify-content: center;
-    /* Centers the grid items */
     align-items: center;
-    padding: 40px !important;
     max-width: 90% !important;
     margin: auto !important;
     padding: 20px;
 }
 
-
+/* Individual restaurant card styles */
 .card {
     border: none;
-    /* Remove unwanted border */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    /* Soft shadow */
     border-radius: 10px;
-    /* Rounded corners */
     overflow: hidden;
-    /* Ensures clean edges */
     text-align: center;
-    /* Centers text */
     gap: 20px;
 }
 
+/* Restaurant title style */
 .card-title {
     font-size: 16px;
     font-weight: bold;
@@ -148,103 +172,131 @@ top: 45px;
     text-align: left;
 }
 
+/* Restaurant image */
 .card img {
     width: 100%;
     height: auto;
     transition: transform 0.3s ease-in-out;
-    /* Smooth transition */
 }
 
+/* Image zoom on hover */
 .card:hover img {
     transform: scale(1.1);
-    /* Slight zoom effect on hover */
 }
 
+/* Featured section heading */
 .hee h5 {
     padding-left: 110px;
     font-size: 20px;
     font-weight: bold;
 }
 
+/* Flexbox for title + link */
 .hee {
     display: flex;
-    /* justify-content: end; */
 }
 
+/* Featured link styles */
 .hee a {
     text-decoration: none;
     color: black;
 }
 
+/* Link position and style */
 .hee h6 {
     padding-left: 70%;
     font-size: 20px;
 }
 
-/* rest. food ends here */
+/* ================== ABOUT US SECTION ================== */
 
-
-/* about us section start here */
-.about img {
-    width: 100%;
-    height: 300px;
+/* Section background and overlay */
+.about-section {
+  background: url('img/foodmandu-bg.png') no-repeat center center;
+  background-size: cover;
+  min-height: 450px;
+  position: relative;
+  padding: 80px 20px;
 }
 
-.about p {
-    text-align: justify;
-    padding: 25px;
-    font-size: 20px;
+/* Dark overlay for better text visibility */
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 0;
 }
 
-.about h5 {
-    text-align: center;
-    font-size: 30px;
+/* Text stays above overlay */
+.about-section .container {
+  position: relative;
+  z-index: 1;
 }
 
-.about .us {
-    position: absolute;
-    top: 216%;
+.about-section h2,
+.about-section p {
+  color: #fff;
 }
 
-/* about us section ends here */
+/* ================== DOWNLOAD THE APP SECTION ================== */
 
-
-/*Download The App Section Start Here  */
-.download .dl img {
-    height: 20%;
-    width: 8%;
-
+.download-app-section {
+  padding: 60px 20px;
+  background-color: #fff;
 }
 
-.download .det {
-    padding-top: 100px;
+.download-app-section .container {
+  max-width: 1300px;
+  margin: 0 auto;
+  gap: 40px;
 }
 
-.download .det p {
-    font-size: 18px;
-    padding-left: 500px;
-    padding-top: 30px;
+.download-app-section .text-content {
+  flex: 1;
+  min-width: 300px;
 }
 
-.download .det b {
-    font-size: 20px;
-    padding-left: 500px;
-
+/* Section heading */
+.download-app-section .text-content h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
-.download .dl {
-    padding-left: 500px;
+.download-app-section .text-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
 }
 
-.download .ui {
-    left: 800px;
-    position: absolute;
-    top: 2430px;
+/* App store button spacing */
+.download-app-section .store-buttons {
+  margin-top: 20px;
 }
 
-/* Download The App Section Ends Here  */
+.download-app-section .store-buttons img {
+  height: 40px;
+  margin-right: 15px;
+  cursor: pointer;
+}
 
-/* list start here */
+/* Preview image on right */
+.download-app-section .app-preview {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.download-app-section .app-preview img {
+  max-width: 260px;
+  height: auto;
+}
+
+/* ================== LIST YOUR RESTAURANT SECTION ================== */
 
 .list {
     background-color: rgba(0, 136, 255, 0.966);
@@ -257,23 +309,28 @@ top: 45px;
     font-size: 30px;
 }
 
-.list .btn button{
-   background-color: yellow;
-        border: none;
-        border-radius: 5px;
-     
-}
+/* Button container */
 .list .btn {
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically (if needed) */
+    justify-content: center;
+    align-items: center;
     padding-top: 40px;
 }
-.list .btn a{
+
+/* Button style */
+.list .btn button {
+   background-color: yellow;
+   border: none;
+   border-radius: 5px;
+}
+
+/* Link style */
+.list .btn a {
     text-decoration: none;
     color: black;
 }
-/* footer starts here */
+
+/* ================== FOOTER ================== */
 
 footer {
     background: #f8f8f8;
@@ -294,12 +351,14 @@ footer {
     width: 22%;
 }
 
+/* Footer column title */
 .footer-column h4 {
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
+/* List items inside footer */
 .footer-column ul {
     list-style: none;
     padding: 0;
@@ -309,6 +368,7 @@ footer {
     margin-bottom: 8px;
 }
 
+/* Footer links */
 .footer-column ul li a {
     text-decoration: none;
     color: #555;
@@ -318,13 +378,13 @@ footer {
     color: #d32f2f;
 }
 
-/* Download App Buttons */
+/* Download app buttons in footer */
 .download-buttons img {
     width: 120px;
     margin-right: 10px;
 }
 
-/* Social Media Icons */
+/* Social media icon styling */
 .social-icons {
     margin-top: 10px;
 }
@@ -340,12 +400,14 @@ footer {
     color: #d32f2f;
 }
 
+/* Footer divider */
 hr {
     margin: 20px auto;
     width: 100%;
     border: 0.5px solid #ddd;
 }
 
+/* Bottom line of footer */
 .footer-bottom {
     text-align: center;
     padding-top: 10px;
@@ -363,25 +425,9 @@ hr {
 .footer-bottom a:hover {
     color: #d32f2f;
 }
-/* footer ends here */
 
-/* login button start here */
-
-.headd button:hover{
+/* ================== LOGIN BUTTON HOVER ================== */
+.headd button:hover {
     background-color: #ffffff;
     color: black;
-}
-
-/* headd hover ends here */
-
-/* tag line start here */
-.picsearch .pp{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 25px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);    
 }
