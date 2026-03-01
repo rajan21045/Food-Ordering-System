@@ -1,184 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UrbanPulse - Login & Sign Up</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary-color: #ff4757;
-            --secondary-color: #2f3542;
-            --bg-color: #f7f1e3;
+            --primary-red: #ff3838;
+            --dark-bg: #0b0f19;
+            --glass: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.15);
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+                url('img/pic1.jpg') center/cover no-repeat;
+            height: 100vh;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            overflow: hidden;
         }
 
-        .auth-card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        /* Moving Gradient Orbs for that "Pulse" effect */
+        .orb {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 56, 56, 0.2), transparent 70%);
+            z-index: 0;
+            border-radius: 50%;
+        }
+
+        /* Glassmorphism Card */
+        .auth-container {
+            position: relative;
+            z-index: 10;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 50px 40px;
+            border-radius: 40px;
             width: 100%;
-            max-width: 400px;
-            transition: all 0.3s ease;
-        }
-
-        .auth-card h2 {
-            margin-top: 0;
-            color: var(--secondary-color);
-            font-weight: 600;
+            max-width: 450px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
 
-        .auth-card p {
-            color: #747d8c;
-            text-align: center;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
+        .brand-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
         }
 
-        .input-group {
-            margin-bottom: 15px;
+        .brand-logo span {
+            color: var(--primary-red);
+        }
+
+        h2 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        /* Modern Inputs */
+        .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-box i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+            font-size: 1.2rem;
         }
 
         input {
             width: 100%;
-            padding: 14px;
-            border: 1px solid #dcdde1;
-            border-radius: 10px;
+            padding: 16px 16px 16px 55px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            color: white;
             font-size: 1rem;
-            box-sizing: border-box;
             outline: none;
-            transition: 0.2s;
+            transition: 0.3s;
+            box-sizing: border-box;
         }
 
         input:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.1);
+            border-color: var(--primary-red);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(255, 56, 56, 0.2);
         }
 
-        .btn-primary {
+        /* Action Button */
+        .btn-auth {
             width: 100%;
-            padding: 14px;
-            background-color: var(--primary-color);
+            padding: 16px;
+            background: var(--primary-red);
             color: white;
             border: none;
-            border-radius: 10px;
-            font-size: 1rem;
+            border-radius: 20px;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
-            transition: 0.3s;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-top: 10px;
         }
 
-        .btn-primary:hover {
-            background-color: #ff6b81;
-            transform: translateY(-2px);
+        .btn-auth:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 56, 56, 0.4);
+            background: #ff5252;
         }
 
-        .toggle-container {
-            margin-top: 20px;
-            text-align: center;
+        /* Toggle Links */
+        .toggle-text {
+            margin-top: 25px;
+            color: #94a3b8;
             font-size: 0.9rem;
         }
 
         .toggle-link {
-            color: var(--primary-color);
-            font-weight: 600;
-            cursor: pointer;
+            color: var(--primary-red);
             text-decoration: none;
+            font-weight: 600;
+            margin-left: 5px;
+            cursor: pointer;
         }
 
-        /* Smooth animation for switching */
+        /* Animations */
         .fade-in {
-            animation: fadeIn 0.5s ease;
+            animation: fadeIn 0.6s ease forwards;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <div class="auth-card">
-        <div id="login-section" class="fade-in">
-            <h2>Welcome Back!</h2>
-            <p>The best food in town is just a login away.</p>
-            
-            <div class="input-group">
-                <input type="email" id="loginEmail" placeholder="Email Address" required>
+    <div class="orb" style="top: -10%; right: -10%;"></div>
+    <div class="orb" style="bottom: -10%; left: -10%;"></div>
+
+    <div class="auth-container fade-in">
+        <div class="brand-logo">Urban<span>Pulse</span></div>
+
+        <div id="login-section">
+            <h2>Welcome Back</h2>
+            <p>Ready to satisfy your cravings?</p>
+
+            <div class="input-box">
+                <i class='bx bx-envelope'></i>
+                <input type="email" placeholder="Email Address">
             </div>
-            <div class="input-group">
-                <input type="password" id="loginPass" placeholder="Password" required>
+            <div class="input-box">
+                <i class='bx bx-lock-alt'></i>
+                <input type="password" placeholder="Password">
             </div>
-            
-            <button class="btn-primary" onclick="handleAuth('login')">Sign In</button>
-            
-            <div class="toggle-container">
-                Don't have an account? 
-                <span class="toggle-link" onclick="showSignup()">Create account</span>
+
+            <button class="btn-auth" onclick="handleAuth()">Sign In</button>
+
+            <div class="toggle-text">
+                New to UrbanPulse?
+                <span class="toggle-link" onclick="toggleAuth('signup')">Create Account</span>
             </div>
         </div>
 
-        <div id="signup-section" class="fade-in" style="display: none;">
-            <h2>Create Account</h2>
-            <p>Join us to start ordering your favorites.</p>
-            
-            <div class="input-group">
-                <input type="text" placeholder="Full Name" required>
+        <div id="signup-section" style="display: none;">
+            <h2>Join the Pulse</h2>
+            <p>Your urban food journey starts here.</p>
+
+            <div class="input-box">
+                <i class='bx bx-user'></i>
+                <input type="text" placeholder="Full Name">
             </div>
-            <div class="input-group">
-                <input type="email" placeholder="Email Address" required>
+            <div class="input-box">
+                <i class='bx bx-envelope'></i>
+                <input type="email" placeholder="Email Address">
             </div>
-            <div class="input-group">
-                <input type="password" placeholder="Create Password" required>
+            <div class="input-box">
+                <i class='bx bx-lock-alt'></i>
+                <input type="password" placeholder="Create Password">
             </div>
-            
-            <button class="btn-primary" onclick="handleAuth('signup')">Create Account</button>
-            
-            <div class="toggle-container">
-                Already have an account? 
-                <span class="toggle-link" onclick="showLogin()">Login here</span>
+
+            <button class="btn-auth" onclick="handleAuth()">Create Account</button>
+
+            <div class="toggle-text">
+                Already a member?
+                <span class="toggle-link" onclick="toggleAuth('login')">Login Now</span>
             </div>
         </div>
     </div>
 
     <script>
-        const loginSection = document.getElementById('login-section');
-        const signupSection = document.getElementById('signup-section');
+        function toggleAuth(view) {
+            const login = document.getElementById('login-section');
+            const signup = document.getElementById('signup-section');
 
-        // Switches view to Signup
-        function showSignup() {
-            loginSection.style.display = 'none';
-            signupSection.style.display = 'block';
+            if (view === 'signup') {
+                login.style.display = 'none';
+                signup.style.display = 'block';
+                signup.classList.add('fade-in');
+            } else {
+                signup.style.display = 'none';
+                login.style.display = 'block';
+                login.classList.add('fade-in');
+            }
         }
 
-        // Switches view to Login
-        function showLogin() {
-            signupSection.style.display = 'none';
-            loginSection.style.display = 'block';
-        }
-
-        // Redirects to index.html after click
-        function handleAuth(type) {
-            // In a real app, you would validate the inputs here.
-            // For now, we simulate a successful login.
-            console.log(type + " successful");
-            
-            // Redirect to your main page
-            window.location.href = "index.html";
+        function handleAuth() {
+            // Smooth transition to homepage
+            document.querySelector('.auth-container').style.opacity = '0';
+            document.querySelector('.auth-container').style.transform = 'translateY(-20px)';
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 500);
         }
     </script>
 </body>
+
 </html>
