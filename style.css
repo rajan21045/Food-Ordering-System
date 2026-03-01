@@ -1,0 +1,167 @@
+/* ================= GLOBAL BRAND SETTINGS ================= */
+
+body {
+  font-family: 'Winky Sans', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  letter-spacing: 0.5px;
+}
+
+/* Brand Colors */
+:root {
+  --primary-red: #E53935;
+  --dark-bg: #0F172A;
+  --deep-dark: #1E293B;
+  --soft-light: #E5E7EB;
+}
+
+/* ================= HERO SECTION ================= */
+
+.picsearch {
+  position: relative;
+}
+
+.picsearch img {
+  height: 550px;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.picsearch h2 {
+  font-size: 2.5rem;
+}
+
+.picsearch input {
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+
+.picsearch button {
+  border-radius: 30px;
+  background-color: var(--primary-red);
+  border: none;
+}
+
+.picsearch button:hover {
+  background-color: #c62828;
+}
+
+/* ================= FEATURED CARDS ================= */
+
+.card {
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ================= ABOUT SECTION ================= */
+
+.about-modern {
+  background: linear-gradient(
+    135deg,
+    var(--dark-bg) 0%,
+    var(--deep-dark) 60%,
+    #020617 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.about-modern::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(229,57,53,0.25), transparent);
+  top: -120px;
+  right: -120px;
+}
+
+.about-modern h2 {
+  color: white;
+}
+
+.about-modern p {
+  color: var(--soft-light);
+}
+
+.about-features {
+  list-style: none;
+  padding: 0;
+}
+
+.about-features li {
+  color: var(--soft-light);
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+/* About Button */
+.about-modern .btn-danger {
+  background: var(--primary-red);
+  border: none;
+  transition: 0.3s;
+}
+
+.about-modern .btn-danger:hover {
+  background: #c62828;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(229,57,53,0.4);
+}
+
+/* ================= DOWNLOAD SECTION ================= */
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+/* ================= CTA SECTION ================= */
+
+.bg-danger {
+  background-color: var(--primary-red) !important;
+}
+
+.bg-danger .btn-light {
+  transition: 0.3s;
+  border-radius: 30px;
+}
+
+.bg-danger .btn-light:hover {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  background-color: var(--dark-bg);
+}
+
+footer a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  color: var(--primary-red) !important;
+}
+
+footer hr {
+  opacity: 0.2;
+}
