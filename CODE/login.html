@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanPulse - Login & Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --bg-color: #f7f1e3;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .auth-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            transition: all 0.3s ease;
+        }
+
+        .auth-card h2 {
+            margin-top: 0;
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .auth-card p {
+            color: #747d8c;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #dcdde1;
+            border-radius: 10px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.1);
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff6b81;
+            transform: translateY(-2px);
+        }
+
+        .toggle-container {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .toggle-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* Smooth animation for switching */
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-card">
+        <div id="login-section" class="fade-in">
+            <h2>Welcome Back!</h2>
+            <p>The best food in town is just a login away.</p>
+            
+            <div class="input-group">
+                <input type="email" id="loginEmail" placeholder="Email Address" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="loginPass" placeholder="Password" required>
+            </div>
+            
+            <button class="btn-primary" onclick="handleAuth('login')">Sign In</button>
+            
+            <div class="toggle-container">
+                Don't have an account? 
+                <span class="toggle-link" onclick="showSignup()">Create account</span>
+            </div>
+        </div>
+
+        <div id="signup-section" class="fade-in" style="display: none;">
+            <h2>Create Account</h2>
+            <p>Join us to start ordering your favorites.</p>
+            
+            <div class="input-group">
+                <input type="text" placeholder="Full Name" required>
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Create Password" required>
+            </div>
+            
+            <button class="btn-primary" onclick="handleAuth('signup')">Create Account</button>
+            
+            <div class="toggle-container">
+                Already have an account? 
+                <span class="toggle-link" onclick="showLogin()">Login here</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginSection = document.getElementById('login-section');
+        const signupSection = document.getElementById('signup-section');
+
+        // Switches view to Signup
+        function showSignup() {
+            loginSection.style.display = 'none';
+            signupSection.style.display = 'block';
+        }
+
+        // Switches view to Login
+        function showLogin() {
+            signupSection.style.display = 'none';
+            loginSection.style.display = 'block';
+        }
+
+        // Redirects to index.html after click
+        function handleAuth(type) {
+            // In a real app, you would validate the inputs here.
+            // For now, we simulate a successful login.
+            console.log(type + " successful");
+            
+            // Redirect to your main page
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
